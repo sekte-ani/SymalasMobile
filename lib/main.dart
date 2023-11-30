@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:symalas_mobile/pages/login_page.dart';
+import 'package:get/get.dart';
+import 'package:symalas_mobile/controllers/bindings/dashboard_binding.dart';
+import 'package:symalas_mobile/ui/pages/dashboard_page.dart';
+import 'package:symalas_mobile/ui/pages/login_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +14,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      initialRoute: "/",
+      initialBinding: DashboardBinding(),
       home: LoginPage(),
     );
   }
